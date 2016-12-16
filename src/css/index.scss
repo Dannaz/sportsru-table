@@ -26,6 +26,7 @@ body {
 table {
   margin: 10px;
   border-collapse: collapse;
+  cursor: pointer;
 }
 thead, tr {
   height: 30px;
@@ -41,7 +42,7 @@ th:nth-child(2) {
 }
 th, td {
   padding: 10px;
-  min-width: 30px;
+  min-width: 50px;
   text-align: right;
 }
 th, td {
@@ -53,8 +54,12 @@ th, td {
   }
   &:nth-child(2) {
     text-align: left;
+    width: 100%;
     min-width: 130px;
     border:  $border;
+    a {
+      text-decoration: none;
+    }
   }
 }
 th,td{
@@ -70,6 +75,7 @@ th,td{
 img {
   width: 15px;
   height: 10px;
+  margin-right: 5px;
   display: inline-block;
   @include border-radius(3px);
 }
@@ -83,35 +89,35 @@ img {
   background-color: #ff9999;
 }
 
-@media screen and (min-width: 370px){
+@media screen and (min-width: 430px){
   th,td{
     &:nth-child(4) {
       display: table-cell;
     }
   }
 }
-@media screen and (min-width: 420px){
+@media screen and (min-width: 500px){
   th,td{
     &:nth-child(5) {
       display: table-cell;
     }
   }
 }
-@media screen and (min-width: 470px){
+@media screen and (min-width: 570px){
   th,td{
     &:nth-child(6) {
       display: table-cell;
     }
   }
 }
-@media screen and (min-width: 520px){
+@media screen and (min-width: 640px){
   th,td{
     &:nth-child(7) {
       display: table-cell;
     }
   }
 }
-@media screen and (min-width: 570px){
+@media screen and (min-width: 710px){
   th,td{
     &:nth-child(8) {
       display: table-cell;

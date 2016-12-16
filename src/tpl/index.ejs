@@ -35,7 +35,16 @@
                 <td><%= team.score %></td>
                 </tr>
             <% }); %>
+
         </tbody>
+
     </table>
+    <div>
+
+        <% footer.forEach(function (elem) { %>
+        <b><%= elem.name%></b> - <%= elem.description%>
+        <% });%>
+
+    </div>
 </body>
 </html>
