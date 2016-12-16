@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <table class="sortable">
+        <thead>
+            <% for( var key in headers) {%>
+                <th><%= headers[key].name%></th>
+            <% } %>
+        </thead>
+        <tbody>
+            <% data.teams.forEach(function (team) { %>
+                <tr>
+                <td <% var name ="";
+                    if (team.place <=3) {name = "top3"}
+                    if (team.place >3 && team.place <=5) {name = "top5"}
+                    //TODO: why teams is undefined?
+                    if (team.place >= 18) {name = "outsiders"}
+                 %> class="<%= name%>">
+                    <%= team.place %>
+                </td>
+                <td><a href="<%=team.tag_url %>"><img src="img/italy.svg" alt=""/><%= team.name %></a></td>
+                <td><%= team.matches %></td>
+                <td><%= team.win %></td>
+                <td><%= team.draw %></td>
+                <td><%= team.lose %></td>
+                <td><%= team.goals %></td>
+                <td><%= team.conceded_goals %></td>
+                <td><%= team.score %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

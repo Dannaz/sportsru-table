@@ -1,0 +1,120 @@
+$border: 2px solid #cccccc;
+$header_font_color: #006699;
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin background-image($url) {
+  -webkit-background-image: url($url);
+  -moz-background-image: url($url);
+  -o-background-image: url($url);
+  background-image: url($url);
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+table {
+  margin: 10px;
+  border-collapse: collapse;
+}
+thead, tr {
+  height: 30px;
+  border-bottom: $border;
+}
+th {
+  border-top: $border;
+  text-align: right;
+  color: $header_font_color;
+}
+th:nth-child(2) {
+  color: black;
+}
+th, td {
+  padding: 10px;
+  min-width: 30px;
+  text-align: right;
+}
+th, td {
+  &:first-child {
+    width: 30px;
+  }
+  &:last-child {
+    background-color: #eeeeee;
+  }
+  &:nth-child(2) {
+    text-align: left;
+    min-width: 130px;
+    border:  $border;
+  }
+}
+th,td{
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6),
+  &:nth-child(7),
+  &:nth-child(8)
+  {
+    display: none;
+  }
+}
+img {
+  width: 15px;
+  height: 10px;
+  display: inline-block;
+  @include border-radius(3px);
+}
+.top3 {
+  background-color: #66cc99;
+}
+.top5 {
+  background-color: #ccffcc;
+}
+.outsiders {
+  background-color: #ff9999;
+}
+
+@media screen and (min-width: 370px){
+  th,td{
+    &:nth-child(4) {
+      display: table-cell;
+    }
+  }
+}
+@media screen and (min-width: 420px){
+  th,td{
+    &:nth-child(5) {
+      display: table-cell;
+    }
+  }
+}
+@media screen and (min-width: 470px){
+  th,td{
+    &:nth-child(6) {
+      display: table-cell;
+    }
+  }
+}
+@media screen and (min-width: 520px){
+  th,td{
+    &:nth-child(7) {
+      display: table-cell;
+    }
+  }
+}
+@media screen and (min-width: 570px){
+  th,td{
+    &:nth-child(8) {
+      display: table-cell;
+    }
+  }
+}
